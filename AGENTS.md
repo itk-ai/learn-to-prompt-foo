@@ -1,0 +1,56 @@
+# AGENTS.md - Context for AI Agents
+
+This repo contains training materials for teaching non-technical users promptfoo. Key context for agents:
+
+## Repo Purpose
+- Training documentation only - no executable code
+- Target audience: Non-technical Windows users learning promptfoo
+- All content is instructional (guides, templates, checklists)
+
+## File Organization
+- **Core guides:** README.md, SETUP.md, VSCODE-SETUP.md, YAML-CHEATSHEET.md, PROMPTFOO-BASICS.md, GIT-WORKFLOW.md
+- **Training management:** TRAINING-AGENDA.md, SESSION-CHECKLIST.md, INSTRUCTOR-GUIDE.md
+- **Practical resources:** EXAMPLES.md, STARTER-TEMPLATE.md, QUICK-REFERENCE.md
+- **Navigation:** INDEX.md, TRAINING-SUMMARY.md
+
+## Key Context
+
+### Training Structure
+- 6 sessions (4-6h setup, 6-8h fundamentals, 4-6h advanced, 4-6h practice)
+- Total 15-20 hours including homework
+- In-person workshops + self-study
+
+### Content Sources
+- EXAMPLES.md contains real patterns from `/home/akda/git_repos/prompfoo-docker/eval-configs/MBU-Databeskyttelse/`
+- STARTER-TEMPLATE.md is the canonical template for new configs
+- All YAML examples use 2-space indentation (critical for trainees)
+
+### Agent Guidance
+- When helping with training content: Reference EXAMPLES.md for MBU-specific patterns
+- When suggesting templates: Use STARTER-TEMPLATE.md as base
+- When troubleshooting: Check QUICK-REFERENCE.md first
+- When explaining concepts: Point to PROMPTFOO-BASICS.md
+- When tracking progress: Use SESSION-CHECKLIST.md structure
+
+### Important Notes
+- This is NOT a promptfoo project - it's training materials ABOUT promptfoo
+- No actual promptfoo configs here (except templates/examples)
+- Trainees use these materials to learn, then work in prompfoo-docker repo
+- All paths in examples are relative to prompfoo-docker (e.g., `file:///app/providers/owui.js`)
+
+## Commands & Shortcuts (Documented in materials)
+- VSCode terminal: `` Ctrl + ` ``
+- Format YAML: `Shift+Alt+F`
+- Source Control: `Ctrl+Shift+G`
+- Save: `Ctrl+S`
+
+## What Agents Should NOT Do
+- Do not suggest adding executable code here
+- Do not modify EXAMPLES.md patterns without checking prompfoo-docker source
+- Do not create new training sessions without consulting TRAINING-AGENDA.md structure
+- Do not suggest Windows-specific solutions (materials assume Windows throughout)
+
+## References
+- Source examples: `/home/akda/git_repos/prompfoo-docker/eval-configs/MBU-Databeskyttelse/promptfooconfig.yaml`
+- Promptfoo docs: https://www.promptfoo.dev/docs/
+- Training target: Non-technical users (emphasize simplicity, step-by-step)
