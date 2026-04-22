@@ -27,16 +27,6 @@ This guide helps non-technical users get up and running with promptfoo for evalu
 ### Bonus: (Coding) Agent in VSCode (1 hour)
 - Set up Opencode in VSCode
 
-## Quick Links
-
-- [Setup Guide](./SETUP.md)
-- [YAML Cheat Sheet](./YAML-CHEATSHEET.md)
-- [VSCode Setup](./VSCODE-SETUP.md)
-- [Training Agenda](./TRAINING-AGENDA.md)
-- [Git Workflow Guide](./GIT-WORKFLOW.md)
-- [Promptfoo Basics](./PROMPTFOO-BASICS.md)
-- [Cheat Sheets](./CHEAT-SHEETS/)
-
 ## Prerequisites Checklist
 
 Before starting training, ensure:
@@ -50,23 +40,30 @@ Before starting training, ensure:
 
 ## Tools We'll Use
 
-1. **Visual Studio Code (VSCode)** - Code editor with integrated terminal and Git
-2. **Node.js** - JavaScript runtime (includes npm)
-3. **Git** - Version control
-4. **promptfoo** - LLM evaluation tool
+1. **Visual Studio Code (VSCode)** - Code editor with integrated 
+   terminal and Git (git is for version control, collaboration and direct contribution
+   to our instance of the Promptfoo platform)
+2. **Node.js** - JavaScript runtime (includes npm and npx): Used to run the promptfoo application
+3. **promptfoo** - LLM evaluation tool
+4. **Git** - Version control
 
 ## Success Criteria
 
 After completing this training, you will be able to:
-- [ ] Install and configure VSCode, Node.js, and Git
-- [ ] Create and edit YAML configuration files
-- [ ] Write promptfoo evaluation configs
-- [ ] Run evaluations and interpret results
-- [ ] Use Git to manage your work
-- [ ] Troubleshoot common issues independently
+- [ ] Create and edit YAML configuration files for promptfoo
+- [ ] Choose test cases and assertion criteria for the evaluation configs
+- [ ] Run evaluations and interpret the results
+- [ ] Maybe use Git to manage your work and contribution with evaluation configs
+
+## References
+
+- [Promptfoo documentation](https://www.promptfoo.dev/docs)
+- [Codebase/repo: Our promptfoo instance](https://github.com/itk-dev/prompfoo-docker/)
+- [Aarhus AI](https://ai.aarhuskommune.dk/)
+- [Aarhus AI staging](https://stgai.itkdev.dk)
+- [Aarhus AI development site](https://webui.srvitkstgweb02.itkdev.dk)
+- [Official VSCode Install](https://code.visualstudio.com/docs/setup/windows)
 
 ---
 
-**Training Instructor:** [Your Name]
-**Contact:** [Your Email]
 **Last Updated:** April 2026
