@@ -11,11 +11,11 @@ This guide helps non-technical users get up and running with promptfoo for evalu
 ## Training Structure
 
 ### Phase 1: Setup & Basics (3 hours)
-- Session 1: Installing stuff (VSCode, promptfoo and what's needed)
-- Session 2: Access our LLMs and run promptfoo demo
+- [Session 1: Installing stuff](./SETUP.md) (VSCode, promptfoo and what's needed)
+- [Session 2: Access our LLMs and run promptfoo demo](./GETTING-STARTED.md)
 
 ### Phase 2: Promptfoo Evaluations (4-5 hours)
-- Session 3: Understanding the YAML Config Structure
+- [Session 3: Understanding the YAML Config Structure](./PROMPTFOO-EVALUATIONS.md)  
              Play around with the MBU Evaluation (as an example)
 - Session 4: Creating New Evaluations/test suites/promptfoo config
              Tests for Anne Vibekes Bias-checker (as an example)
@@ -28,6 +28,11 @@ This guide helps non-technical users get up and running with promptfoo for evalu
 - Set up Opencode in VSCode
 
 ## Prerequisites Checklist
+
+**IMPORTANT** before we begin:
+- [ ] ensure you have builder role for [ai.aarhuskommune.dk](https://ai.aarhuskommune.dk)
+- [ ] you have builder role for [stgai](https://stgai.itkdev.dk)
+![./sreendumps/request_access.png "Anmod om adgang i Systemregistret"]
 
 Before starting training, ensure:
 - [ ] Windows 10/11 machine
