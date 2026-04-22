@@ -6,25 +6,26 @@ This guide helps non-technical users get up and running with promptfoo for evalu
 
 **Target Audience:** Non-technical users who need to create and run promptfoo evaluations
 **Prerequisites:** Windows machine with admin rights, comfortable learning new software
-**Time Commitment:** 15-20 hours (setup + training + practice)
+**Time Commitment:** 10-15 hours (setup + training) then comes actual doing (where you can reach out at any point)
 
 ## Training Structure
 
-### Phase 1: Setup & Basics (4-6 hours)
-- Session 1: Installation & First Steps
-- Session 2: YAML & Git Fundamentals
+### Phase 1: Setup & Basics (3 hours)
+- Session 1: Installing stuff (VSCode, promptfoo and what's needed)
+- Session 2: Access our LLMs and run promptfoo demo
 
-### Phase 2: Promptfoo Fundamentals (6-8 hours)
-- Session 3: Understanding Config Structure
-- Session 4: Creating New Tests
+### Phase 2: Promptfoo Evaluations (4-5 hours)
+- Session 3: Understanding the YAML Config Structure
+             Play around with the MBU Evaluation (as an example)
+- Session 4: Creating New Evaluations/test suites/promptfoo config
+             Tests for Anne Vibekes Bias-checker (as an example)
 
-### Phase 3: Working Independently (4-6 hours)
-- Session 5: Advanced Patterns
-- Session 6: Troubleshooting & Best Practices
+### Phase 3: Collaboration via Git - Optional (2 hours)
+- Session 5: git in VSCode and access to Github
+- Session 6: contribute with tests to our common promptfoo instance
 
-### Phase 4: Self-Study & Practice (4-6 hours)
-- Homework assignments
-- Optional follow-up session
+### Bonus: (Coding) Agent in VSCode (1 hour)
+- Set up Opencode in VSCode
 
 ## Quick Links
 
