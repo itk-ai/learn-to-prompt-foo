@@ -5,13 +5,7 @@ This repo contains training materials for teaching non-technical users promptfoo
 ## Repo Purpose
 - Training documentation only - no executable code
 - Target audience: Non-technical Windows users learning promptfoo
-- All content is instructional (guides, templates, checklists)
-
-## File Organization
-- **Core guides:** README.md, SETUP.md, VSCODE-SETUP.md, YAML-CHEATSHEET.md, PROMPTFOO-BASICS.md, GIT-WORKFLOW.md
-- **Training management:** TRAINING-AGENDA.md, SESSION-CHECKLIST.md, INSTRUCTOR-GUIDE.md
-- **Practical resources:** EXAMPLES.md, STARTER-TEMPLATE.md, QUICK-REFERENCE.md
-- **Navigation:** INDEX.md, TRAINING-SUMMARY.md
+- All content is instructional (guides, templates)
 
 ## Key Context
 
@@ -47,7 +41,7 @@ This repo contains training materials for teaching non-technical users promptfoo
 ## What Agents Should NOT Do
 - Do not suggest adding executable code here
 - Do not modify EXAMPLES.md patterns without checking prompfoo-docker source
-- Do not create new training sessions without consulting TRAINING-AGENDA.md structure
+- Do not create new training sessions without consulting README.md
 - Do not suggest Windows-specific solutions (materials assume Windows throughout)
 
 ## References
