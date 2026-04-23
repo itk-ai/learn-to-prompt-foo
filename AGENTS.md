@@ -8,11 +8,20 @@ This repo contains training materials for teaching non-technical users promptfoo
 - All content is instructional (guides, templates)
 
 ## Key Context
+- The session guides
+- Session guides already reviewed and approved SETUP.md, GETTING-STARTED.md. MUST NOT BE ALTERED.
+- Session guides to work on see NEXT-STEPS.md 
 
 ### Training Structure
-- 6 sessions (4-6h setup, 6-8h fundamentals, 4-6h advanced, 4-6h practice)
+- 3 sessions
 - Total 15-20 hours including homework
 - In-person workshops + self-study
+
+Content Strategy:
+- All guides should be short and to the point
+- No "trainer instructions" like "watch for", "helpful hints", "success indicators", only instructions or explanations
+- Focus on what the trainee needs to do
+- Use actual examples from MBU config
 
 ### Content Sources
 - EXAMPLES.md contains real patterns from `/home/akda/git_repos/prompfoo-docker/eval-configs/MBU-Databeskyttelse/`
@@ -23,8 +32,7 @@ This repo contains training materials for teaching non-technical users promptfoo
 - When helping with training content: Reference EXAMPLES.md for MBU-specific patterns
 - When suggesting templates: Use STARTER-TEMPLATE.md as base
 - When troubleshooting: Check QUICK-REFERENCE.md first
-- When explaining concepts: Point to PROMPTFOO-BASICS.md
-- When tracking progress: Use SESSION-CHECKLIST.md structure
+- When tracking progress agent progress: Use NEXT-STEPS.md
 
 ### Important Notes
 - This is NOT a promptfoo project - it's training materials ABOUT promptfoo
