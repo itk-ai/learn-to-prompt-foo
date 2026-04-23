@@ -43,6 +43,14 @@ After installing VSCode, install the **YAML extension**:
 4. Install **YAML by Red Hat** (_For reference: This is the 
    [corresponding webpage extension](https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml)_)
 
+### Configure YAML Settings
+1. Open settings: **File** → **Preferences** → **Settings** (or `Ctrl+,`)
+2. Search for "YAML"
+3. Recommended settings:
+   - ✅ `YAML: Schema Download` - Enable (downloads schema for validation)
+   - ✅ `YAML: Format` - Enable auto-formatting
+   - ✅ `YAML: Validate` - Enable validation
+
 ## promptfoo
 
 Finally we [install promptfoo](https://www.promptfoo.dev/docs/installation/):
