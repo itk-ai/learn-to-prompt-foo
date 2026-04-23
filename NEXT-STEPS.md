@@ -8,10 +8,17 @@
 
 ## Next: Create Remaining Session Guides
 
+### Content Strategy
+
+- All guides should be short and to the point
+- Remove all "trainer instructions" like "watch for", "helpful hints", "success indicators"
+- Focus on what the trainee needs to do
+- Use actual examples from MBU and Bias-checker configs
+
 ### Session 3: PROMPTFOO-EVALUATIONS.md (Already exists - needs review)
 **Goal:** Walk through MBU evaluation config
 **Content needed:**
-- Load existing MBU config from prompfoo-docker repo
+- Load existing MBU config from prompfoo-docker repo (locally at ~/git_repos/prompfoo-docker/eval-configs/MBU-Databeskyttelse/promptfooconfig.yaml)
 - Explain each section (prompts, providers, defaultTest, tests, assertionTemplates)
 - Run the MBU evaluation
 - Add a simple test case
@@ -26,7 +33,14 @@
 - Design test cases (what to test, what assertions to use)
 - Run evaluation and interpret results
 
-### Session 5: GIT-CONTRIBUTION.md (Optional - Needs to be created)
+### Session 5: GIT-SETUP.md (Optional - Needs to be created)
+**Goal:** Use Git to contribute to common promptfoo instance
+**Content needed:**
+- Install git (already partly written, see SETUP-OPTIONAL.md)
+- Setup github account
+- access github and use git functionality in VScode
+
+### Session 6: CONTRIBUTE.md (Optional - Needs to be created)
 **Goal:** Use Git to contribute to common promptfoo instance
 **Content needed:**
 - Clone prompfoo-docker repo
@@ -34,11 +48,6 @@
 - Add your eval config
 - Commit and push
 - Create Pull Request
-
-### Session 6: MERGE-AND-DEPLOY.md (Needs clarification)
-**Goal:** Understanding how contributions get merged
-**Content needed:**
-- TBD (need to understand the deployment process)
 
 ### Bonus: OPENCODE-SETUP.md (Needs to be created)
 **Goal:** Set up Opencode agent in VSCode
