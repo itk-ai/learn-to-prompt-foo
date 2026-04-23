@@ -20,6 +20,7 @@
 **Content needed:**
 - Load existing MBU config from prompfoo-docker repo (locally at ~/git_repos/prompfoo-docker/eval-configs/MBU-Databeskyttelse/promptfooconfig.yaml)
 - Explain each section (prompts, providers, defaultTest, tests, assertionTemplates)
+- The relevant content from EXAMPLES.md needs to go into this file, so EXAMPLES.md can be deleted
 - Run the MBU evaluation
 - Add a simple test case
 - Run again and see results
@@ -28,8 +29,8 @@
 ### Session 4: BIAS-CHECKER.md (Needs to be created)
 **Goal:** Create tests for Anne Vibekes Bias-checker
 **Content needed:**
-- Explain what the Bias-checker does
-- Create new promptfooconfig for this use case
+- Explain what the Bias-checker does (see https://stgai.itkdev.dk/api/v1/models/model?id=biastjekker1-2025)
+- Create new promptfooconfig for this use case (refer to the STARTER-TEMPLATE.md)
 - Design test cases (what to test, what assertions to use)
 - Run evaluation and interpret results
 
@@ -45,7 +46,7 @@
 **Content needed:**
 - Clone prompfoo-docker repo
 - Create branch
-- Add your eval config
+- Add your eval config (from session 4 Bias checker)
 - Commit and push
 - Create Pull Request
 
@@ -61,33 +62,25 @@
 ### PROMPTFOO-EVALUATIONS.md (Exists - needs review)
 Read and check if it aligns with the new lean approach
 
-### EXAMPLES.md (Exists - keep as reference)
-Contains real MBU patterns - keep for reference
+### EXAMPLES.md (Exists - should be deleted, when not needed)
+The relevant content from EXAMPLES.md needs to go into PROMPTFOO-EVALUATIONS.md, afterward EXAMPLES.md can be deleted
 
 ### STARTER-TEMPLATE.md (Exists - simplify)
-Can be simplified to just a copy-paste template
+Can be simplified to more or less just a copy-paste template
 
 ### QUICK-REFERENCE.md (Exists - keep)
 One-page cheat sheet - keep as is
 
 ### YAML-CHEATSHEET.md (Exists - keep)
-YAML syntax reference - keep as is
-
-### VSCODE-SETUP.md (Exists - may need simplification)
-Check if too detailed
+YAML syntax reference - Keep core syntax, remove practice exercises
 
 ### GIT-WORKFLOW.md (Exists - may need simplification)
 Check if too detailed
 
 ## Immediate Actions
 
-1. **Review PROMPTFOO-EVALUATIONS.md** - Does it follow the lean approach?
+1. **Review and complete PROMPTFOO-EVALUATIONS.md** - Ensure it follow the lean approach!
 2. **Create BIAS-CHECKER.md** - Session 4 content
 3. **Simplify remaining docs** - Remove instructor notes, trim excess
 4. **Create OPENCODE-SETUP.md** - Bonus session
 
-## Questions to Clarify
-
-1. What is the actual deployment process for promptfoo-docker?
-2. What does Session 6 ("contribute with tests to our common promptfoo instance") actually involve?
-3. Do we need both PROMPTFOO-EVALUATIONS.md and EXAMPLES.md, or can we merge them?
