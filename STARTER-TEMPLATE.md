@@ -217,32 +217,3 @@ Before running, make sure to update:
   config:
     param: "value"
 ```
-
-## Tips
-
-1. **Start simple** - Add one test, run, verify, then add more
-2. **Use descriptions** - Helps remember what each test does
-3. **Add metadata** - Makes filtering and analysis easier
-4. **Use templates** - Don't repeat yourself
-5. **Check YAML validation** - Red underlines mean errors
-6. **Format before saving** - `Shift+Alt+F` fixes indentation
-
-## Next Steps
-
-After creating your config:
-1. Run eval and check results
-2. Adjust assertions if needed
-3. Add more test cases
-4. Organize into separate files if growing large
-5. Use Git to track changes
-
-## Need Help?
-
-- Check [YAML-CHEATSHEET.md](./YAML-CHEATSHEET.md) for syntax
-- Check [EXAMPLES.md](./EXAMPLES.md) for real examples
-- Check [PROMPTFOO-BASICS.md](./PROMPTFOO-BASICS.md) for concepts
-- Ask your instructor
-
----
-
-**Good luck with your first evaluation!**
