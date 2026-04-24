@@ -3,13 +3,13 @@ description: Training guide for non-technical users to master promptfoo evaluati
 theme: just-the-docs
 
 # Plugins
-#plugins:
-#  - jekyll-default-layout
-#  - jekyll-feed
-#  - jekyll-optional-front-matter
-#  - jekyll-readme-index
-#  - jekyll-titles-from-headings
-#  - jekyll-relative-links
+plugins:
+  - jekyll-default-layout
+  - jekyll-feed
+  - jekyll-optional-front-matter
+  - jekyll-readme-index
+  - jekyll-titles-from-headings
+  - jekyll-relative-links
 
 # Navigation settings
 nav_sort: case_sensitive
