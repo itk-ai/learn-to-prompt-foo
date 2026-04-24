@@ -1,4 +1,14 @@
+---
+title: "YAML Cheat Sheet"
+parent: "Cheat Sheets & Templates"
+nav_order: 2
+---
+<!-- OPenCode draft -->
+
 # YAML Cheat Sheet
+
+> [!WARN]
+> This is an Opencode draft
 
 YAML is a simple format for configuration files. It uses indentation instead of brackets.
 
