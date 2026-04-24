@@ -1,4 +1,14 @@
+---
+title: "Quick Reference"
+parent: "Cheat Sheets & Templates"
+nav_order: 1
+---
+<!-- OPenCode draft -->
+
 # Quick Reference Card
+
+> [!WARN]
+> This is an Opencode draft
 
 Print this or keep it open while working!
 
