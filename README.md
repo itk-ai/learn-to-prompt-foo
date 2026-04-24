@@ -15,7 +15,7 @@ This guide helps non-technical users get up and running with promptfoo for evalu
 - [Session 2: Access our LLMs and run promptfoo demo](setup/GETTING-STARTED.md)
 
 ### Phase 2: Promptfoo Evaluations (4-5 hours)
-- [Session 3: Understanding the YAML Config Structure](./PROMPTFOO-EVALUATIONS.md)  
+- [Session 3: Understanding the YAML Config Structure](evaluations/PROMPTFOO-EVALUATIONS.md)  
              Play around with the MBU Evaluation (as an example)
 - Session 4: Creating New Evaluations/test suites/promptfoo config
              Tests for Anne Vibekes Bias-checker (as an example)
