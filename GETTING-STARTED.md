@@ -1,3 +1,9 @@
+---
+title: "Session 2: Getting Started"
+parent: "Phase 1: Setup & Basics"
+nav_order: 2
+---
+
 # Session 2: Getting Started with Promptfoo
 
 **Goal:** Run your first promptfoo evaluation using our LLMs
