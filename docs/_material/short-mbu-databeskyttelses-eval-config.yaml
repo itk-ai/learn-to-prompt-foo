@@ -1,0 +1,215 @@
+# yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
+description: "Test MBU Databeskyttelses AI"
+
+prompts:
+  - "{{question}}"
+
+providers:
+  - id: file:///app/providers/owui.js
+    label: "DEV - MBU databeskyttelsesassistent" # Display name in UI
+    config:
+      apiEndpointEnvironmentVariable: "DEV_OWUI_ENDPOINT"
+      apiKeyEnvironmentVariable: "DEV_OWUI_API_KEY"
+      model: "databeskyttelse-mbu"
+      outputSources: true
+  - id: file:///app/providers/owui.js
+    label: "STG - MBU databeskyttelsesassistent" # Display name in UI
+    config:
+      apiEndpointEnvironmentVariable: "STG_OWUI_ENDPOINT"
+      apiKeyEnvironmentVariable: "STG_OWUI_API_KEY"
+      model: "databeskyttelse-mbu"
+      outputSources: true
+
+# Defines reuseable assertations - see https://www.promptfoo.dev/docs/configuration/expected-outputs/#reusing-assertions-with-templates
+assertionTemplates:
+  refuseToAnswer:
+    type: regex
+    value: '.*kontakt(?:er|e)?\s+databeskyttelse@mbu\.aarhus\.dk.*'
+    transform: "output.text"
+    metric: refusal
+    # There is the is-refusal assertion, but this check deterministically only for english responses see [isBasicRefusal](https://github.com/promptfoo/promptfoo/blob/main/src/redteam/util.ts#L182)
+    # Best solution would probably be to split on sentences and check similarity on
+    # "Jeg anbefaler du kontakter databeskyttelse@mbu.aarhus.dk for at få besvaret dit spørgsmål"
+
+defaultTest:
+  # Default assert for alle test kunne være eks. https://huggingface.co/alexandrainst/da-discourse-coherence-base, som på
+  # 1-3 skala classificerer hvor let forståeligt svaret er
+  #assert:
+  #  - type: classifier
+  #    provider: huggingface:text-classification:alexandrainst/da-discourse-coherence-base
+  #    value: 3
+  #    threshold: 0.8
+
+  options:
+    # Standard can be found at https://github.com/promptfoo/promptfoo/blob/main/src/prompts/grading.ts
+    # Simple rubric prompt inspired from the multilingual rubric eval prompt: https://www.promptfoo.dev/docs/configuration/expected-outputs/model-graded/llm-rubric/#non-english-evaluation
+    rubricPrompt: |
+      [
+        {
+          "role": "system",
+          "content": "Du vurderer om givne svar er fyldestgørende og korrekte i forhold til ideelle ekspert svar. Svar JSON format: {\"reason\": \"string\", \"pass\": boolean, \"score\": number}. ALLE begrundelser skal være på dansk."
+        },
+        {
+          "role": "user", 
+          "content": "<Givet svar>\n{{ output }}\n</Givet svar>\n\n<Ideelt svar>\n{{ rubric }}\n</Ideelt svar>"
+        }
+      ]
+    provider:
+      id: file:///app/providers/owui.js
+      label: "judge"
+      config:
+        apiEndpointEnvironmentVariable: "DEV_OWUI_ENDPOINT"
+        apiKeyEnvironmentVariable: "DEV_OWUI_API_KEY"
+        model: "AarhusAI-default"
+        outputSources: false
+    config:
+      pythonExecutable: .venv/bin/python
+      # NB: To use the custom assertion python scripts we must run promptfoo within an activated virtual environment (the uv environment)
+
+tests:
+  - vars:
+      question: Hvornår må vi sende klasselister ud til nye 0-klasser
+    assert:
+      - $ref: "#/assertionTemplates/refuseToAnswer"
+      - type: python
+        value: file:///app/assertions/refusal_assertion.py
+        transform: "output.text"
+        metric: refusal
+    metadata:
+      origin: synthetic
+      refusal: yes
+
+  - vars:
+      question: Hvornår må nye forældre til skolestartere komme i Aula
+    assert:
+      - type: icontains-any
+        value:
+          - "31. jul"
+          - "august"
+        transform: "output.text" # see https://www.promptfoo.dev/docs/configuration/reference/#transformation-pipeline for details
+        # This asserts that the answers contain at least one of the two key date-markers from the context
+        metric: answer
+      - type: icontains
+        value: "FAQ om databeskyttelse i Børn og Unge.md"
+        transform: 'output.sources.map(o => o.reference).join(" ")' # concatenates the source title of the retrieved documents
+        # This asserts that a chunk from a document with the right title is found as context
+        metric: docRetrival
+      - type: icontains-any
+        value:
+          - "Mht. adgang til Aula, må forældrene først komme på til august"
+          - "styres af Pladsanvisningen som 31/7 fjerner det flueben i elevadministrationssystemet som hindrer overførsel til Aula"
+        transform: 'output.sources.map(o => o.content).join("/n/n")' # concatenates the content of the retrieved documents
+        # This asserts that the exact context have been provided through the retrieved chunks
+        metric: contentRetrieval
+    metadata:
+      origin: synthetic
+
+  - vars:
+      question: |-
+        vedr. klasselister til kommende skolestarter. 
+        Hvor mange oplysninger må der stå på klasselisten, når vi skal sende ud til forældre til kommende skolestartere?
+    assert:
+      - type: icontains
+        value: "fulde navn"
+        transform: "output.text"
+        metric: answer
+      - type: python
+        value: file:///app/assertions/essential_claims_assertion.py
+        transform: "output.text"
+        config:
+          essentialClaims:
+            - "fulde navn"
+        metric: answer
+      - type: icontains
+        value: "FAQ om databeskyttelse i Børn og Unge.md"
+        transform: 'output.sources.map(o => o.reference).join(" ")' # concatenates the source title of the retrieved documents
+        # This asserts that a chunk from a document with the right title is found as context
+        metric: docRetrival
+      - type: icontains-all
+        value:
+          - "Som udgangspunkt er det tilladt, så længe man sikre,r at beskyttede navne på eleverne ikke kommer med på listen"
+          - "ikke indeholder adresser og telefonnumre"
+          - "I må skrive barnets fulde navn, og I skal naturligevis sende listerne med sikker post"
+        transform: 'output.sources.map(o => o.content).join("/n/n")' # concatenates the content of the retrieved documents
+        # This asserts that the exact context have been provided through the retrieved chunks
+        metric: contentRetrieval
+    metadata:
+      origin: real
+
+  - vars:
+      question: Må vi gerne have en elev, der har svært ved at komme i skole med på fjernundervisning, så eleven kan følge med i det vi laver fx. via google meet?
+    options:
+      transform: "output.text"
+    assert:
+      - type: llm-rubric
+        value: |-
+          Ja det er tilladt at anvende Google Meet til fjernundervisning. Der må dog intet følsomt,  fortroligt, eller stødende, indgå i transmissionen. Hvis eleven er synligt syg anbefales det er slukke for kameraet hos eleven. Der skal være tydeligt for elever i klassen og andre der kommer ind, at der kører et Google Meet. Og i hjemmet hos eleven må der ikke indgå andre i transmissionen end den syge elev. Der må ikke ske optagelse af transmissionen.
+        # This asserts the assistent output with an ideal answer
+        weight: 0.1 # As the AarhusAI default LLM scores on a scale to 10
+        metric: answer
+    metadata:
+      origin: real
+
+  - vars:
+      question: >
+        Jeg er interesseret i at vide om det er tilladt at sende billeder til forældre via sms, 
+        og her mener jeg billeder af det enkelte barn der kun sendes til forældre?  Fx hvis et 
+        barn har været meget ked af det ifm. aflevering men efter lidt tid leger og er 
+        glad – hvilket vi ønsker at formidle til bekymrede forældre via et billede af barnet.
+    assert:
+      - type: python
+        value: file:///app/assertions/ja_nej_assertion.py
+        transform: "output.text"
+        config:
+          expectedAnswerCategory: Afvisende
+        metric: answer
+        # Tjek om det er bekræftende svar eller afvisende svar, det skal være afvisning
+      - type: icontains
+        value: "FAQ om databeskyttelse i Børn og Unge.md"
+        transform: 'output.sources.map(o => o.reference).join(" ")' # concatenates the source title of the retrieved documents
+        # This asserts that a chunk from a document with the right title is found as context
+        metric: docRetrival
+      - type: icontains-any
+        value:
+          - "det yderst sjældent kan være relevant/nødvendigt at sende billeder i SMS, og derfor bør du undgå dette"
+          - "Nej, du må ikke sende billeder af et barn i forbindelse med SMS-kontakt med forældrene for at dokumentere, at barnet har det godt."
+        transform: 'output.sources.map(o => o.content).join("/n/n")' # concatenates the content of the retrieved documents
+        # This asserts that the exact context have been provided through the retrieved chunks
+        metric: contentRetrieval
+    metadata:
+      origin: real
+
+  - vars:
+      question: |-
+        Jeg arbejder i en vuggestue. Vi laver billedbøger af barnet  og dets kammerater som vi forærer til forældrene når barnet går ud af vuggestuen. 
+        Det må jeg vel ikke ifølge GPDR reglerne?
+    assert:
+      - type: icontains
+        value: "FAQ om databeskyttelse i Børn og Unge.md"
+        transform: 'output.sources.map(o => o.reference).join(" ")' # concatenates the source title of the retrieved documents
+        # This asserts that a chunk from a document with the right title is found as context
+        metric: docRetrival
+      - type: icontains-any
+        value:
+          - "det er tilladt at oprette fotoalbum eller andre fotoproduktioner og give barnet med som afskedgave, hvis I benytter jer af redskaber, som er tilgængelige i afdelingen til produktionen"
+          - "Vær dog opmærksom på, at I ikke må uploade billeder til diverse hjemmesider"
+        transform: 'output.sources.map(o => o.content).join("/n/n")' # concatenates the content of the retrieved documents
+        # This asserts that the exact context have been provided through the retrieved chunks
+        metric: contentRetrieval
+      - type: python
+        value: file:///app/assertions/ja_nej_assertion.py
+        transform: "output.text"
+        config:
+          expectedAnswerCategory: Bekræftende
+        metric: answer
+        # Tjek om det er bekræftende svar eller afvisende svar, det skal være bekræftende
+      - type: llm-rubric
+        value: |-
+          Jo det må i godt, så længe i benytter jer af de redskaber i har tilgængelige i vuggestuen til at lave billedbogen. I må ikke uploade eller give billeder til service på internettet eller anden tredjepart som så producerer bogen.
+        transform: "output.text"
+        # This asserts the assistent output with an ideal answer
+        # This alternavtive was not suggested by Morten, but invented by me before Morten suggested a confirmation-
+        weight: 0.1 # As the AarhusAI default LLM scores on a scale to 10
+        metric: answer
+    metadata:
+      origin: real

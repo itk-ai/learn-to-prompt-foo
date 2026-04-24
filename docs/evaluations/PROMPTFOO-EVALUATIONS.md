@@ -25,7 +25,8 @@ nav_order: 1
 
 ### Where to Find It
 
-The MBU Databeskyttelse evaluation is located in the prompfoo-docker repository:
+The MBU Databeskyttelse evaluation is located in the 
+[prompfoo-docker github repository](https://github.com/itk-dev/promptfoo-docker):
 
 ```
 eval-configs/MBU-Databeskyttelse/promptfooconfig.yaml
@@ -37,13 +38,14 @@ This evaluation tests the MBU Databeskyttelse assistant with **real questions** 
 - Content retrieval quality
 - Proper refusals for out-of-scope questions
 
+A shortened version (leaving out many of the test-cases) can be found 
+[here](../_material/short-mbu-databeskyttelses-eval-config.yaml)
+and can be used for testing in this guide.
+
 ### Opening the Config
 
-Open the file in VSCode:
-
-```bash
-code eval-configs/MBU-Databeskyttelse/promptfooconfig.yaml
-```
+Download the [shortened version](../_material/short-mbu-databeskyttelses-eval-config.yaml) to a project directory 
+and open the directory in VSCode and open the file as well:
 
 ---
 
@@ -66,11 +68,18 @@ prompts:
   - "{{question}}"
 ```
 
-The prompt template. Here we send the question directly to the LLM. The `{{question}}` variable gets replaced with actual test questions from the `tests` section.
+The prompt template. Here we send the question directly to the LLM. 
+The `{{question}}` variable gets replaced with actual test questions from the `tests` section.
+
+There could have been some "prompt-text" around the variable to create some template, but the "model" (provider)
+we are going to evaluate already in itself adds a system prompt and some reference material. 
+By keeping the prompt template as clean as above, we simulate a user in the openwebUI chat interface writing their
+initial message to the "model" (chat assistant).
 
 ### 3. Providers
 
-This is where we use our **custom OWUI provider** instead of the raw HTTP provider from Session 2.
+This is where we use our **custom OWUI provider** instead of the raw HTTP provider from 
+[Session 2](../setup/GETTING-STARTED.md#step-3-change-provider).
 
 ```yaml
 providers:
@@ -92,12 +101,47 @@ providers:
 
 **Key differences from Session 2 (HTTP provider):**
 
-| Feature | HTTP Provider (Session 2) | OWUI Provider (Session 3) |
-|---------|--------------------------|---------------------------|
-| **Config** | Manual `url`, `headers`, `body` | Simplified config with env variable names |
-| **API Keys** | Exposed in `Authorization` header | Read securely from `.env` file |
-| **Sources** | Not supported | `outputSources: true` enables RAG sources |
-| **Response** | Simple text (via `transformResponse`) | Object with `text` and `sources` |
+| Feature | HTTP Provider (Session 2)                                                | OWUI Provider (Session 3) |
+|---------|--------------------------------------------------------------------------|---------------------------|
+| **Config** | Manual `url`, `headers`, `body`                                          | Simplified config with env variable names |
+| **API Keys** | Exposed in `Authorization` header                                        | Read securely from `.env` file |
+| **Sources** | Needs custom implementation to be handled                                | `outputSources: true` enables RAG sources |
+| **Response** | The full json object or after `transformResponse` just Simple text | Object with `text` and `sources` |
+
+**Download the custom provider:**
+
+The custom provider `owui.js` is kept updated in 
+[ITK Dev's prompfoo-docker Github repository](https://github.com/itk-dev/promptfoo-docker/tree/develop/providers), a
+copy of the provider file is available [here for download](../_material/owui.js) (note this provider might not reflect
+the current provider in the prompfoo-docker repo, but it will work with the shortened version of the 
+MBU Databeskyttelses config file).
+
+Download the `owui.js` file to the same directory where 
+[`short-mbu-databeskyttelses-eval-config.yaml`](../_material/short-mbu-databeskyttelses-eval-config.yaml)
+is stored.
+
+Now update the path string of `id` in the config, so that the providers list looks like:
+
+```yaml
+providers:
+  - id: file://owui.js # updated path
+    label: "DEV - MBU databeskyttelsesassistent"
+    config:
+      apiEndpointEnvironmentVariable: "DEV_OWUI_ENDPOINT"
+      apiKeyEnvironmentVariable: "DEV_OWUI_API_KEY"
+      model: "databeskyttelse-mbu"
+      outputSources: true
+  - id: file://owui.js # updated path
+    label: "STG - MBU databeskyttelsesassistent"
+    config:
+      apiEndpointEnvironmentVariable: "STG_OWUI_ENDPOINT"
+      apiKeyEnvironmentVariable: "STG_OWUI_API_KEY"
+      model: "databeskyttelse-mbu"
+      outputSources: true
+```
+
+_Alternative: You could also place the `owui.js` file in a folder called e.g. `providers`, 
+then the ìd-path would be `file://providers/owui.js`_
 
 **Config options explained:**
 
@@ -107,7 +151,10 @@ providers:
 - `outputSources: true`: **Critical!** This tells the provider to include RAG sources in the output
 
 > [!NOTE]
-> The OWUI provider is a **custom provider** written specifically for our setup. It handles the complexity of API calls securely. See the [OWUI Provider documentation](../promptfoo-writers/providers.md) for details.
+> The OWUI provider is a **custom provider** written specifically for our setup. It handles the complexity of API calls 
+> securely. See the 
+> [OWUI Provider documentation](https://github.com/itk-dev/promptfoo-docker/tree/develop/docs/promptfoo-writers/providers.md) 
+> for details.
 
 ### 4. Assertion Templates
 
@@ -120,7 +167,8 @@ assertionTemplates:
     metric: refusal
 ```
 
-**Reusable patterns** that can be referenced in multiple tests using `$ref`. This template checks if the answer tells the user to contact the data protection team.
+**Reusable patterns** that can be referenced in multiple tests using `$ref`. 
+This template checks if the answer tells the user to contact the data protection team.
 
 ### 5. Default Test
 
@@ -153,8 +201,10 @@ defaultTest:
 **Settings that apply to ALL tests:**
 
 - `rubricPrompt`: The prompt used for `llm-rubric` assertions (in Danish!) - this defines how the LLM-as-judge evaluates answers
-- `provider`: Which LLM to use for judging answers (here: `AarhusAI-default`)
-- `config.pythonExecutable`: Path to Python for running custom Python assertions
+- `provider`: Which LLM to use for judging answers (here: `AarhusAI-default`)  
+  **IMPORTANT:** The provider id path also needs to be updated here to reflect the changes in where the custom owui.js
+  provider is located from [section 3 providers](#3-providers) 
+- `config.pythonExecutable`: Path to Python for running custom Python assertions. TODO: This also needs to be updated
 
 > [!NOTE]
 > These defaults can be overridden in individual tests if needed.
