@@ -34,4 +34,4 @@ Already set up? Jump to:
 
 ---
 
-For the complete training overview, see the [README.md](./README.md).
+For the complete training overview, see the [README.md](../README.md).
