@@ -1,3 +1,9 @@
+---
+title: "Session 1: Setup"
+parent: "Phase 1: Setup & Basics"
+nav_order: 1
+---
+
 # Setup Guide
 
 Install the tools you need for promptfoo evaluations.
@@ -62,7 +68,7 @@ npm install -g promptfoo
 
 ## Probably Optional: Git
 
-To install git see [part two of the setup guide](./SETUP-OPTIONAL.md).
+To install git see [part two of the setup guide](setup/SETUP-OPTIONAL.md).
 
 ## Next Steps
 
