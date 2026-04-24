@@ -1,3 +1,9 @@
+---
+title: "Optional: Git Setup"
+parent: "Phase 1: Setup & Basics"
+nav_order: 3
+---
+
 # Setup Guide (Part two)
 
 Install the very nice to have tools for promptfoo evaluations.
