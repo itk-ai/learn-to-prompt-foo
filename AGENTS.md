@@ -89,5 +89,5 @@ Content Strategy:
 ## References
 - Source examples: `/home/akda/git_repos/prompfoo-docker/eval-configs/MBU-Databeskyttelse/promptfooconfig.yaml`
 - Promptfoo docs: https://www.promptfoo.dev/docs/
-- Training site: (GitHub Pages URL - set after deployment)
+- Training site: https://itk-ai.github.io/learn-to-prompt-foo/
 - Training target: Non-technical users (emphasize simplicity, step-by-step)
