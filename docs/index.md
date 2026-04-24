@@ -11,7 +11,9 @@ This guide helps non-technical users get up and running with promptfoo for evalu
 ## Training Overview
 
 **Target Audience:** Non-technical users who need to create and run promptfoo evaluations
+
 **Prerequisites:** Windows machine with admin rights, comfortable learning new software
+
 **Time Commitment:** 10-15 hours (setup + training) then comes actual doing (where you can reach out at any point)
 
 ## Training Structure
