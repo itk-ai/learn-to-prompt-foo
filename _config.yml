@@ -1,0 +1,38 @@
+title: Learn Promptfoo
+description: Training guide for non-technical users to master promptfoo evaluations
+theme: just-the-docs
+
+# Navigation settings
+nav_sort: case_sensitive
+
+# Just the Docs configuration
+color_scheme: light
+search_enabled: true
+heading_anchors: true
+aux_links:
+  "Promptfoo Docs":
+    - "https://www.promptfoo.dev/docs/"
+  "Config Repository":
+    - "https://github.com/itk-dev/prompfoo-docker/"
+
+# Footer content
+footer_content: "Training materials for Aarhus Kommune AI team"
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Document collections for organized navigation
+collections:
+  setup:
+    output: true
+    sort_by: nav_order
+  evaluations:
+    output: true
+    sort_by: nav_order
+  git:
+    output: true
+    sort_by: nav_order
+  cheat-sheets:
+    output: true
+    sort_by: nav_order

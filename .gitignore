@@ -1,1 +1,16 @@
 .idea/*
+
+# Jekyll build output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Bundle artifact directory
+vendor/
+
+# Bundler
+Gemfile.lock
+
+# Node packages (if needed later)
+node_modules/
