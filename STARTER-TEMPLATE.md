@@ -1,4 +1,14 @@
+---
+title: "Starter Template"
+parent: "Cheat Sheets & Templates"
+nav_order: 3
+---
+<!-- OPenCode draft -->
+
 # Starter Template
+
+> [!WARN]
+> This is an Opencode draft
 
 Copy this template to start your first evaluation config.
 
