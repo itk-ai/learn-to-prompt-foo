@@ -64,11 +64,9 @@ We need to extract your API key (token) from the browser.
 1. Open Chrome/Edge browser
 2. Navigate to: `https://stgai.itkdev.dk`
 3. Press `F12` or right-click → "Inspect" ("Inspicer") or follow:
-   ![./sceendumps/edge-dev-tools.png "Tryk F12 eller højre klik på siden og vælg Inspicer"]
+   ![Tryk F12 eller højre klik på siden og vælg Inspicer](./../sceendumps/edge-dev-tools.png "Tryk F12 eller højre klik på siden og vælg Inspicer")
 4. Click the **Network** tab
-   ![./sceendumps/dev-tool-network.png]
-
-**Screenshot placeholder:** DevTools with Network tab visible
+   ![](./../sceendumps/dev-tool-network.png)
 
 #### 3.2 Trigger an API Call
 
@@ -76,7 +74,7 @@ We need to extract your API key (token) from the browser.
 2. Send the message
 3. In the Network tab, you should see e.g. a `completions` row appear. Click it.
 
-[!./screendumps/edge-dev-find-apikey.png]
+![](./../screendumps/edge-dev-find-apikey.png)
 
 #### 3.3 Find the Authorization Header
 

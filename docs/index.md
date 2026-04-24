@@ -38,7 +38,7 @@ This guide helps non-technical users get up and running with promptfoo for evalu
 **IMPORTANT** before we begin:
 - [ ] ensure you have builder role for [ai.aarhuskommune.dk](https://ai.aarhuskommune.dk)
 - [ ] you have builder role for [stgai](https://stgai.itkdev.dk)
-![./screendumps/request_access.png "Anmod om adgang i Systemregistret"]
+  ![Anmod om adgang i Systemregistret](./screendumps/request_access.png "Anmod om adgang i Systemregistret")
 
 Before starting training, ensure:
 - [ ] Windows 10/11 machine
