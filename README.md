@@ -11,8 +11,8 @@ This guide helps non-technical users get up and running with promptfoo for evalu
 ## Training Structure
 
 ### Phase 1: Setup & Basics (3 hours)
-- [Session 1: Installing stuff](./SETUP.md) (VSCode, promptfoo and what's needed)
-- [Session 2: Access our LLMs and run promptfoo demo](./GETTING-STARTED.md)
+- [Session 1: Installing stuff](setup/SETUP.md) (VSCode, promptfoo and what's needed)
+- [Session 2: Access our LLMs and run promptfoo demo](setup/GETTING-STARTED.md)
 
 ### Phase 2: Promptfoo Evaluations (4-5 hours)
 - [Session 3: Understanding the YAML Config Structure](./PROMPTFOO-EVALUATIONS.md)  

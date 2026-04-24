@@ -68,7 +68,7 @@ npm install -g promptfoo
 
 ## Probably Optional: Git
 
-To install git see [part two of the setup guide](setup/SETUP-OPTIONAL.md).
+To install git see [part two of the setup guide](SETUP-OPTIONAL.md).
 
 ## Next Steps
 
