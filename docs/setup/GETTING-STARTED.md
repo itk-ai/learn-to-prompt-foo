@@ -288,7 +288,7 @@ prompts:
 providers:
   - id: https
     config:
-      url: '{{ env.STG_OWUI_ENDPOINT }}/api/v1/chat/completions'
+      url: '\{\{ env.STG_OWUI_ENDPOINT \}\}/api/v1/chat/completions'
       method: 'POST'
       headers:
         'Content-Type': 'application/json'
