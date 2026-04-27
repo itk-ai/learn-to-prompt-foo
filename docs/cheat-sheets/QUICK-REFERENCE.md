@@ -49,6 +49,7 @@ text: |
 
 ## Promptfoo Config Template
 
+{% raw %}
 ```yaml
 description: "My evaluation"
 
@@ -76,6 +77,7 @@ tests:
     metadata:
       category: "test"
 ```
+{% endraw %}
 
 ## Common Assertions
 

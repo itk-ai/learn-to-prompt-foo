@@ -284,6 +284,8 @@ tests:
 ```
 
 ### Example 3: Complex Config
+
+{% raw %}
 ```yaml
 description: "My evaluation"
 
@@ -309,6 +311,7 @@ tests:
       category: "test"
       priority: "high"
 ```
+{% endraw %}
 
 ## Need Help?
 

@@ -16,6 +16,7 @@ Copy this template to start your first evaluation config.
 
 Save as `promptfooconfig.yaml`:
 
+{% raw %}
 ```yaml
 # yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
 description: "My first evaluation - [DESCRIBE WHAT YOU'RE TESTING]"
@@ -161,6 +162,7 @@ tests:
       category: "answer"
       origin: "synthetic"
 ```
+{% endraw %}
 
 ## Running Your First Eval
 

@@ -63,13 +63,15 @@ Simple text describing what this evaluation tests.
 
 ### 2. Prompts
 
+{% raw %}
 ```yaml
 prompts:
   - "{{question}}"
 ```
+{% endraw %}
 
 The prompt template. Here we send the question directly to the LLM. 
-The `{{question}}` variable gets replaced with actual test questions from the `tests` section.
+The {% raw %}`{{question}}`{% endraw %} variable gets replaced with actual test questions from the `tests` section.
 
 There could have been some "prompt-text" around the variable to create some template, but the "model" (provider)
 we are going to evaluate already in itself adds a system prompt and some reference material. 
@@ -172,6 +174,7 @@ This template checks if the answer tells the user to contact the data protection
 
 ### 5. Default Test
 
+{% raw %}
 ```yaml
 defaultTest:
   options:
@@ -197,6 +200,7 @@ defaultTest:
     config:
       pythonExecutable: .venv/bin/python
 ```
+{% endraw %}
 
 **Settings that apply to ALL tests:**
 
