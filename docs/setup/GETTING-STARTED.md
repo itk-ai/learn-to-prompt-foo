@@ -129,6 +129,7 @@ This creates a `getting-started` subfolder with the official example.
 
 Open `getting-started/promptfooconfig.yaml`. You'll see:
 
+{% raw %}
 ```yaml
 # yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
 description: 'Getting started'
@@ -154,6 +155,7 @@ tests:
       - type: icontains
         value: 'Dónde está la biblioteca'
 ```
+{% endraw %}
 
 **What this does:**
 - Tests translation prompts
@@ -163,6 +165,7 @@ tests:
 **How to talk about _it_ (the text in the yaml file) ...** 
 Below comments (text after a hashtag `#`) provide a bit of explaining and nomenclature.
 
+{% raw %}
 ```yaml
 # yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
 description: 'Getting started' # "description" is an object or key to which a string is assigned
@@ -202,6 +205,7 @@ tests: # Yet another list with two elements, this time the elements are not stri
                         # to the case of the sting
         value: 'Dónde está la biblioteca'
 ```
+{% endraw %}
 
 **Problem:** We don't have OpenAI API keys. We want to use **our** LLMs instead.
 
@@ -237,9 +241,9 @@ and now we need to specify each of the remaining elements in the config object:
 **url:**  
 In the `url`-string we need to use the environment variable from our `.env`-file. 
 We want to access models through the AarhusAI staging platform and promptfoo make environment variable accessible 
-through `{{ env.<NAME> }}`. In our case the environment variable `STG_OWUI_ENDPOINT` only contains the main site and 
+through {% raw %}`{{ env.<NAME> }}`{% endraw %}. In our case the environment variable `STG_OWUI_ENDPOINT` only contains the main site and 
 not the "path" or "route" to the actual API endpoint. Thus, the `url`-string need to be 
-`{{ env.STG_OWUI_ENDPOINT }}/api/v1/chat/completions` in order to reach the chat completion endpoint.
+{% raw %}`{{ env.STG_OWUI_ENDPOINT }}/api/v1/chat/completions`{% endraw %} in order to reach the chat completion endpoint.
 
 > [!NOTE]
 > Full documentation of the various endpoints are available at [stgai.itkdev.dk/docs](https://stgai.itkdev.dk/docs) -
@@ -247,9 +251,9 @@ not the "path" or "route" to the actual API endpoint. Thus, the `url`-string nee
 
 **headers:**  
 The headers object is used to provide information to the API service and need to contain the following two objects:
-- `'Content-Type': 'application/json'`  
+- `'Content-Type': 'application/json'` 
   that tells the API service how to interpret the provided body-data and how to respond
-- `'Authorization': 'Bearer {{ env.STG_OWUI_API_KEY }}'`  
+- {% raw %}`'Authorization': 'Bearer {{ env.STG_OWUI_API_KEY }}'`{% endraw %}  
   that informs the API service how you would prove that you are entitled to use the API service. Notice that here
   again we use promptfoos feature to let us paste in variables from the environment variables in the `.env`-file
 
@@ -257,12 +261,16 @@ The headers object is used to provide information to the API service and need to
 The body object contains the variables that are expected by the endpoint. 
 Specifically a chat completion endpoint expects
 - a message struct with the messages from which the LLM should continue and generate an "assistant" message (answer). 
-  Its simplest form look like 
+  Its simplest form look like
+
+  {% raw %}
   ```yaml
   'messages':
     - role: user
       content: '{{prompt}}'
   ```
+  {% endraw %}
+
   where the prompt-variable is a special variable, that will be replaced by an element from the prompts-list 
 - a 'model' string specifying the id of the LLM, that should be used to generate the chat completions (that is 
   the assistant message). In our case we will try the model [`default`](https://stgai.itkdev.dk/?models=default), thus
