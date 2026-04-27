@@ -278,6 +278,7 @@ transformation as the final object in the `config`-object:
 
 You should end up with a yaml configuration looking like
 
+{% raw %}
 ```yaml
 # yaml-language-server: $schema=https://promptfoo.dev/config-schema.json
 description: 'Getting started'
@@ -288,7 +289,7 @@ prompts:
 providers:
   - id: https
     config:
-      url: '\{\{ env.STG_OWUI_ENDPOINT \}\}/api/v1/chat/completions'
+      url: '{{ env.STG_OWUI_ENDPOINT }}/api/v1/chat/completions'
       method: 'POST'
       headers:
         'Content-Type': 'application/json'
@@ -315,6 +316,7 @@ tests:
       - type: icontains
         value: 'Dónde está la biblioteca'
 ```
+{% endraw %}
 
 ### Exercise: Change the remaining provider
 
