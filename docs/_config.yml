@@ -24,10 +24,6 @@ aux_links:
   "Config Repository":
     - "https://github.com/itk-dev/prompfoo-docker/"
 
-# Collections
-collections:
-  - material
-
 # Footer content
 footer_content: "Training materials for Aarhus Kommune AI team"
 
