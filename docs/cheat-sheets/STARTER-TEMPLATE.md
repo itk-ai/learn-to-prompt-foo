@@ -27,7 +27,7 @@ prompts:
 
 # The LLM(s) to test
 providers:
-  - id: file:///app/providers/owui.js
+  - id: file://providers/owui.js
     label: "DEV - [MODEL NAME]"
     config:
       apiEndpointEnvironmentVariable: "DEV_OWUI_ENDPOINT"
@@ -39,8 +39,21 @@ providers:
 defaultTest:
   options:
     # Provider for assertions (LLM-as-judge)
+    # Standard can be found at https://github.com/promptfoo/promptfoo/blob/main/src/prompts/grading.ts
+    # Simple rubric prompt inspired from the multilingual rubric eval prompt: https://www.promptfoo.dev/docs/configuration/expected-outputs/model-graded/llm-rubric/#non-english-evaluation
+    rubricPrompt: |
+      [
+        {
+          "role": "system",
+          "content": "Du vurderer om givne svar er fyldestgørende og korrekte i forhold til ideelle ekspert svar. Svar JSON format: {\"reason\": \"string\", \"pass\": boolean, \"score\": number}. ALLE begrundelser skal være på dansk."
+        },
+        {
+          "role": "user", 
+          "content": "<Givet svar>\n{{ output }}\n</Givet svar>\n\n<Ideelt svar>\n{{ rubric }}\n</Ideelt svar>"
+        }
+      ]
     provider:
-      id: file:///app/providers/owui.js
+      id: file://providers/owui.js
       config:
         apiEndpointEnvironmentVariable: "DEV_OWUI_ENDPOINT"
         apiKeyEnvironmentVariable: "DEV_OWUI_API_KEY"
@@ -57,13 +70,6 @@ assertionTemplates:
     type: regex
     value: '.*databeskyttelse@mbu\.aarhus\.dk.*'
     transform: "output.text"
-  
-  # Example: Check for refusal
-  refuseToAnswer:
-    type: regex
-    value: '.*kontakt(?:er|e)?\s+databeskyttelse@mbu\.aarhus\.dk.*'
-    transform: "output.text"
-    metric: refusal
 
 # Your test cases
 tests:
