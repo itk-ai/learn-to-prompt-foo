@@ -4,8 +4,9 @@
 
 ✅ **README.md** - Updated with lean structure  
 ✅ **SETUP.md** - Simplified installation guide  
-✅ **GETTING-STARTED.md** - Session 2 
-✅ **PROMPTFOO-EVALUATIONS.md** - Session 3 
+✅ **GETTING-STARTED.md** - Session 2  
+✅ **PROMPTFOO-EVALUATIONS.md** - Session 3 (FINAL)  
+✅ **ASSERTIONS-REFERENCE.md** - Session 3 reference (FINAL)  
 
 ## Next: Create Remaining Session Guides
 
@@ -17,40 +18,51 @@
 - Use actual examples from MBU and Bias-checker configs
 
 ### Session 4: BIAS-CHECKER.md (Needs to be created)
-**Goal:** Create tests for Anne Vibekes Bias-checker
-**Content needed:**
-- Explain what the Bias-checker does (see https://stgai.itkdev.dk/api/v1/models/model?id=biastjekker1-2025)
-- Create new promptfooconfig for this use case (refer to the STARTER-TEMPLATE.md)
-- Design test cases (what to test, what assertions to use)
+**Goal:** Create tests for Anne Vibekes Bias-checker from scratch
+
+**Trainee will:**
+- Learn what the Bias-checker does (system prompt explanation)
+- Create a new promptfooconfig using STARTER-TEMPLATE.md
+- Design test cases based on the Bias-checker's purpose
 - Run evaluation and interpret results
 
+**Before creating:** Ask user for the exact system prompt and formulate exercises to help trainees investigate usage patterns and create meaningful test cases.
+
+**Key references:**
+- Model info: https://stgai.itkdev.dk/api/v1/models/model?id=biastjekker1-2025
+- STARTER-TEMPLATE.md for config structure
+- PROMPTFOO-EVALUATIONS.md for patterns
+
 ### Session 5: GIT-SETUP.md (Optional - Needs to be created)
-**Goal:** Use Git to contribute to common promptfoo instance
-**Content needed:**
-- Install git (already partly written, see SETUP-OPTIONAL.md)
-- Setup github account
-- access github and use git functionality in VScode
+**Goal:** Setup Git for VSCode integration
+
+**Trainee will:**
+- Install git (refer to SETUP-OPTIONAL.md)
+- Configure GitHub account
+- Use Git functionality in VSCode
 
 ### Session 6: CONTRIBUTE.md (Optional - Needs to be created)
-**Goal:** Use Git to contribute to common promptfoo instance
-**Content needed:**
+**Goal:** Contribute eval configs to prompfoo-docker repo via Git
+
+**Trainee will:**
 - Clone prompfoo-docker repo
 - Create branch
-- Add your eval config (from session 4 Bias checker)
+- Add eval config (e.g., from Session 4 Bias-checker)
 - Commit and push
 - Create Pull Request
 
 ### Bonus: OPENCODE-SETUP.md (Needs to be created)
 **Goal:** Set up Opencode agent in VSCode
-**Content needed:**
+
+**Trainee will:**
 - Install Opencode extension
 - Configure for promptfoo work
-- Basic usage examples
+- Learn basic usage examples
 
 ## Files to Review/Update
 
 ### STARTER-TEMPLATE.md (Exists - simplify)
-Can be simplified to more or less just a copy-paste template
+Simplify to a copy-paste template with minimal explanation
 
 ### QUICK-REFERENCE.md (Exists - keep)
 One-page cheat sheet - keep as is
@@ -63,7 +75,7 @@ Check if too detailed
 
 ## Immediate Actions
 
-1. **Review and complete BIAS-CHECKER.md** - Ask user for the exact system prompt and formulate trainee exercises to investigate usage patterns and use cases in order for the trainee to create meaningful test cases!
+1. **Create BIAS-CHECKER.md** - Session 4 content (ask user for model system prompt first)
 2. **Simplify remaining docs** - Remove instructor notes, trim excess
 3. **Create OPENCODE-SETUP.md** - Bonus session
 
