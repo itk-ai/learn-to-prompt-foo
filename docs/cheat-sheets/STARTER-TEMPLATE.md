@@ -7,7 +7,7 @@ nav_order: 3
 
 # Starter Template
 
-> [!WARN]
+{: .warning }
 > This is an Opencode draft
 
 Copy this template to start your first evaluation config.
