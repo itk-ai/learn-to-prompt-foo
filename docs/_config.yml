@@ -31,6 +31,23 @@ footer_content: "Training materials for Aarhus Kommune AI team"
 back_to_top: true
 back_to_top_text: "Back to top"
 
+# Define callouts
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Important
+    color: blue
+  new:
+    title: New
+    color: green
+  note:
+    title: Note
+    color: purple
+  warning:
+    title: Warning
+    color: red
+
 # External navigation links
 nav_external_links:
   - title: This Learn Promptfoo on GitHub
