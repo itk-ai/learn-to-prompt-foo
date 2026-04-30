@@ -29,7 +29,7 @@
 **Before creating:** Ask user for the exact system prompt and formulate exercises to help trainees investigate usage patterns and create meaningful test cases.
 
 **Key references:**
-- Model info: https://stgai.itkdev.dk/api/v1/models/model?id=biastjekker1-2025
+- Model info: https://stgai.itkdev.dk/api/v1/models/model?id=ba-biastjekker-gpt120b
 - STARTER-TEMPLATE.md for config structure
 - PROMPTFOO-EVALUATIONS.md for patterns
 
