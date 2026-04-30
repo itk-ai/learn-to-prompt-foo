@@ -18,13 +18,15 @@
 - Focus on what the trainee needs to do
 - Use actual examples from MBU and Bias-checker configs
 
-### Session 5: GIT-SETUP.md (Optional - Needs to be created)
-**Goal:** Setup Git for VSCode integration
+### Session 5: GIT-SETUP.md ✅ (Completed)
+**Goal:** Setup Git for VSCode integration and practice complete workflow
 
 **Trainee will:**
 - Install git (refer to SETUP-OPTIONAL.md)
 - Configure GitHub account
-- Use Git functionality in VSCode
+- Clone learn-to-prompt-foo repo
+- Practice Git workflow (branch → edit → commit → push → PR)
+- All through VSCode UI
 
 ### Session 6: CONTRIBUTE.md (Optional - Needs to be created)
 **Goal:** Contribute eval configs to prompfoo-docker repo via Git
@@ -61,7 +63,6 @@ Check if too detailed
 ## Immediate Actions
 
 1. **Simplify remaining docs** - Remove instructor notes, trim excess
-2. **Create GIT-SETUP.md** - Optional Session 5
-3. **Create CONTRIBUTE.md** - Optional Session 6
+2. **Create CONTRIBUTE.md** - Optional Session 6
 4. **Create OPENCODE-SETUP.md** - Bonus session
 

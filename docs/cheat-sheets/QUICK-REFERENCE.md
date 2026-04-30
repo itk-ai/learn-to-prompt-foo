@@ -114,28 +114,6 @@ tests:
 - $ref: "#/assertionTemplates/name"
 ```
 
-## Git Commands
-
-```bash
-# Check status
-git status
-
-# Add all files
-git add .
-
-# Commit
-git commit -m "message"
-
-# Push
-git push
-
-# Pull
-git pull
-
-# New branch
-git checkout -b branch-name
-```
-
 ## Promptfoo Commands
 
 ```bash
