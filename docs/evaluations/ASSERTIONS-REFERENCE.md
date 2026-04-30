@@ -1,7 +1,7 @@
 ---
-title: "Assertion Types Reference"
+title: "Reference: Assertion Types"
 parent: "Phase 2: Promptfoo Evaluations"
-nav_order: 2
+nav_order: 3
 ---
 
 {: .warning }
