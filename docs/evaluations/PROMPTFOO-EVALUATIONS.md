@@ -152,7 +152,7 @@ then the ìd-path would be `file://providers/owui.js`_
 - `model`: The model name in OWUI (e.g., `databeskyttelse-mbu`)
 - `outputSources: true`: **Critical!** This tells the provider to include RAG sources in the output
 
-> [!NOTE]
+{: .note }
 > The OWUI provider is a **custom provider** written specifically for our setup. It handles the complexity of API calls 
 > securely. See the 
 > [OWUI Provider documentation](https://github.com/itk-dev/promptfoo-docker/tree/develop/docs/promptfoo-writers/providers.md) 
@@ -233,7 +233,7 @@ defaultTest:
   > TODO: 
   > 
   > In order for this to work, we need to setup a python environment. We will set this up before trying to run 
-  > the evaluations, see [set up python](#part-5-set-up-python)
+  > the evaluations, see [set up python](#part-4-set-up-python)
 
 {: .note }
 > These defaults can be overridden in individual tests if needed.
