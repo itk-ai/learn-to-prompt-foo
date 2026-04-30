@@ -227,6 +227,15 @@ defaultTest:
   > The provider id path also needs to be updated here to reflect the changes in where the custom owui.js
   > provider is located from [Download the custom provider](#download-the-custom-provider)
 
+  {: .warning-title }
+  > IMPORTANT 2
+  > 
+  > In the config the environment variables are set up with the `DEV_` variables. These have not (yet) been configured 
+  > in this training setup, but the same models are available through the staging site, thus change the references to
+  > enviroment variables such that: 
+  > - `DEV_OWUI_ENDPOINT` -> `STG_OWUI_ENDPOINT`
+  > - `DEV_OWUI_API_KEY` ->  `STG_OWUI_API_KEY`
+
 - `config.pythonExecutable`: Path to Python, needed for running custom Python assertions.
 
   {: .note-title }
