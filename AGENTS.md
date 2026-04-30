@@ -23,10 +23,10 @@ docs/
 │   ├── SETUP.md        # Session 1 (FINAL - DO NOT MODIFY)
 │   ├── GETTING-STARTED.md  # Session 2 (FINAL - DO NOT MODIFY)
 │   └── SETUP-OPTIONAL.md   # Optional Git setup
-├── evaluations/        # Phase 2: Promptfoo Evaluations
-│   ├── PROMPTFOO-EVALUATIONS.md  # Session 3 (FINAL - DO NOT MODIFY)
-│   ├── ASSERTIONS-REFERENCE.md   # Session 3 reference (FINAL - DO NOT MODIFY)
-│   └── BIAS-CHECKER.md           # Session 4 (TO BE CREATED)
+  ├── evaluations/        # Phase 2: Promptfoo Evaluations
+  │   ├── PROMPTFOO-EVALUATIONS.md  # Session 3 (FINAL - DO NOT MODIFY)
+  │   ├── ASSERTIONS-REFERENCE.md   # Session 3 reference (FINAL - DO NOT MODIFY)
+  │   └── BIAS-CHECKER.md           # Session 4 (FINAL - DO NOT MODIFY)
 ├── git/                # Phase 3: Collaboration (Optional)
 │   └── GIT-WORKFLOW.md
 ├── cheat-sheets/       # Reference Materials
@@ -42,11 +42,12 @@ docs/
 ```
 
 ## Key Context
-- Session guides already reviewed and approved: 
-  - `SETUP.md` - MUST NOT BE ALTERED
-  - `GETTING-STARTED.md` - MUST NOT BE ALTERED  
-  - `PROMPTFOO-EVALUATIONS.md` - MUST NOT BE ALTERED
-  - `ASSERTIONS-REFERENCE.md` - MUST NOT BE ALTERED
+- Session guides already reviewed and approved (MUST NOT BE ALTERED): 
+  - `SETUP.md` - Session 1
+  - `GETTING-STARTED.md` - Session 2
+  - `PROMPTFOO-EVALUATIONS.md` - Session 3
+  - `ASSERTIONS-REFERENCE.md` - Session 3 reference
+  - `BIAS-CHECKER.md` - Session 4
 - Session guides to work on: See NEXT-STEPS.md
 - All content in `docs/` folder (not root)
 

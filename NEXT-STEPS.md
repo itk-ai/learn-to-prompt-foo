@@ -7,8 +7,9 @@
 ✅ **GETTING-STARTED.md** - Session 2  
 ✅ **PROMPTFOO-EVALUATIONS.md** - Session 3 (FINAL)  
 ✅ **ASSERTIONS-REFERENCE.md** - Session 3 reference (FINAL)  
+✅ **BIAS-CHECKER.md** - Session 4 (FINAL)  
 
-## Next: Create Remaining Session Guides
+## Next: Create Remaining Optional Session Guides
 
 ### Content Strategy
 
@@ -16,22 +17,6 @@
 - Remove all "trainer instructions" like "watch for", "helpful hints", "success indicators"
 - Focus on what the trainee needs to do
 - Use actual examples from MBU and Bias-checker configs
-
-### Session 4: BIAS-CHECKER.md (Needs to be created)
-**Goal:** Create tests for Anne Vibekes Bias-checker from scratch
-
-**Trainee will:**
-- Learn what the Bias-checker does (system prompt explanation)
-- Create a new promptfooconfig using STARTER-TEMPLATE.md
-- Design test cases based on the Bias-checker's purpose
-- Run evaluation and interpret results
-
-**Before creating:** Ask user for the exact system prompt and formulate exercises to help trainees investigate usage patterns and create meaningful test cases.
-
-**Key references:**
-- Model info: https://stgai.itkdev.dk/api/v1/models/model?id=ba-biastjekker-gpt120b
-- STARTER-TEMPLATE.md for config structure
-- PROMPTFOO-EVALUATIONS.md for patterns
 
 ### Session 5: GIT-SETUP.md (Optional - Needs to be created)
 **Goal:** Setup Git for VSCode integration
@@ -75,7 +60,8 @@ Check if too detailed
 
 ## Immediate Actions
 
-1. **Create BIAS-CHECKER.md** - Session 4 content (ask user for model system prompt first)
-2. **Simplify remaining docs** - Remove instructor notes, trim excess
-3. **Create OPENCODE-SETUP.md** - Bonus session
+1. **Simplify remaining docs** - Remove instructor notes, trim excess
+2. **Create GIT-SETUP.md** - Optional Session 5
+3. **Create CONTRIBUTE.md** - Optional Session 6
+4. **Create OPENCODE-SETUP.md** - Bonus session
 
