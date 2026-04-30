@@ -39,12 +39,12 @@ This evaluation tests the MBU Databeskyttelse assistant with **real questions** 
 - Proper refusals for out-of-scope questions
 
 A shortened version (leaving out many of the test-cases) can be found 
-[here](../_material/short-mbu-databeskyttelses-eval-config.yaml)
+[here](../material/short-mbu-databeskyttelses-eval-config.yaml)
 and can be used for testing in this guide.
 
 ### Opening the Config
 
-Download the [shortened version](../_material/short-mbu-databeskyttelses-eval-config.yaml) to a project directory 
+Download the [shortened version](../material/short-mbu-databeskyttelses-eval-config.yaml) to a project directory 
 and open the directory in VSCode and open the file as well:
 
 ---
@@ -114,12 +114,12 @@ providers:
 
 The custom provider `owui.js` is kept updated in 
 [ITK Dev's prompfoo-docker Github repository](https://github.com/itk-dev/promptfoo-docker/tree/develop/providers), a
-copy of the provider file is available [here for download](../_material/owui.js) (note this provider might not reflect
+copy of the provider file is available [here for download](../material/owui.js) (note this provider might not reflect
 the current provider in the prompfoo-docker repo, but it will work with the shortened version of the 
 MBU Databeskyttelses config file).
 
 Download the `owui.js` file to the same directory where 
-[`short-mbu-databeskyttelses-eval-config.yaml`](../_material/short-mbu-databeskyttelses-eval-config.yaml)
+[`short-mbu-databeskyttelses-eval-config.yaml`](../material/short-mbu-databeskyttelses-eval-config.yaml)
 is stored.
 
 Now update the path string of `id` in the config, so that the providers list looks like:
@@ -285,9 +285,9 @@ The custom assertion `refusal_assertion.py` is kept updated in
 together with the other custom assertions, a
 copies of the custom assertions are available here for download:
 
-- [essential_claims_assertion.py](../_material/essential_claims_assertion.py) 
-- [ja_nej_assertion.py](../_material/ja_nej_assertion.py) 
-- [refusal_assertion.py](../_material/refusal_assertion.py) 
+- [essential_claims_assertion.py](../material/essential_claims_assertion.py) 
+- [ja_nej_assertion.py](../material/ja_nej_assertion.py) 
+- [refusal_assertion.py](../material/refusal_assertion.py) 
 
 _(note these custom assertions might not reflect
 the current custom assertions in the [prompfoo-docker repo](https://github.com/itk-dev/promptfoo-docker), but these
@@ -295,7 +295,7 @@ assertions will work with the shortened version of the MBU Databeskyttelses conf
 [first thing in this session](#opening-the-config))_.
 
 Download the all the assertions in the list to the same directory where 
-[`short-mbu-databeskyttelses-eval-config.yaml`](../_material/short-mbu-databeskyttelses-eval-config.yaml)
+[`short-mbu-databeskyttelses-eval-config.yaml`](../material/short-mbu-databeskyttelses-eval-config.yaml)
 is stored.
 
 Now update the path string of `value` in the config, so that the assertion in the test case looks like:
@@ -398,8 +398,8 @@ The `transform` in assertions processes this output object:
 You have probably already downloaded the custom assertion `essential_claims_assertion.py` when going through section
 [Download the custom python assertions](#download-the-custom-python-assertions).
 
-If the [essential_claims_assertion.py](../_material/essential_claims_assertion.py) file is placed in the same directory 
-where [`short-mbu-databeskyttelses-eval-config.yaml`](../_material/short-mbu-databeskyttelses-eval-config.yaml)
+If the [essential_claims_assertion.py](../material/essential_claims_assertion.py) file is placed in the same directory 
+where [`short-mbu-databeskyttelses-eval-config.yaml`](../material/short-mbu-databeskyttelses-eval-config.yaml)
 is stored, then the assertion is updated like
 
 ```yaml
@@ -463,8 +463,8 @@ be `file://assertions/essential_claims_assertion.py`
 You have probably already downloaded the custom assertion `ja_nej_assertion.py` when going through section
 [Download the custom python assertions](#download-the-custom-python-assertions).
 
-If the [ja_nej_assertion.py](../_material/ja_nej_assertion.py) file is placed in the same directory 
-where [`short-mbu-databeskyttelses-eval-config.yaml`](../_material/short-mbu-databeskyttelses-eval-config.yaml)
+If the [ja_nej_assertion.py](../material/ja_nej_assertion.py) file is placed in the same directory 
+where [`short-mbu-databeskyttelses-eval-config.yaml`](../material/short-mbu-databeskyttelses-eval-config.yaml)
 is stored, then the assertion is updated like
 
 ```yaml
