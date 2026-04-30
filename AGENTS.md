@@ -35,7 +35,7 @@ docs/
 ```
 
 ## Key Context
-- Session guides already reviewed and approved: `SETUP.md`, `GETTING-STARTED.md` - MUST NOT BE ALTERED
+- Session guides already reviewed and approved: `SETUP.md`, `GETTING-STARTED.md`, `PROMPTFOO-EVALUATIONS.md` - MUST NOT BE ALTERED
 - Session guides to work on: See NEXT-STEPS.md
 - All content in `docs/` folder (not root)
 
@@ -77,7 +77,6 @@ Content Strategy:
 - Format YAML: `Shift+Alt+F`
 - Source Control: `Ctrl+Shift+G`
 - Save: `Ctrl+S`
-- Jekyll local preview: `cd docs && bundle exec jekyll serve`
 
 ## What Agents Should NOT Do
 - Do not suggest adding executable code here

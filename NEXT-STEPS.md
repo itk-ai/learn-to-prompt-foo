@@ -4,7 +4,8 @@
 
 ✅ **README.md** - Updated with lean structure  
 ✅ **SETUP.md** - Simplified installation guide  
-✅ **GETTING-STARTED.md** - Session 2 (fixed to follow official example pattern)
+✅ **GETTING-STARTED.md** - Session 2 
+✅ **PROMPTFOO-EVALUATIONS.md** - Session 3 
 
 ## Next: Create Remaining Session Guides
 
@@ -14,17 +15,6 @@
 - Remove all "trainer instructions" like "watch for", "helpful hints", "success indicators"
 - Focus on what the trainee needs to do
 - Use actual examples from MBU and Bias-checker configs
-
-### Session 3: PROMPTFOO-EVALUATIONS.md (Already exists - needs review)
-**Goal:** Walk through MBU evaluation config
-**Content needed:**
-- Load existing MBU config from prompfoo-docker repo (locally at ~/git_repos/prompfoo-docker/eval-configs/MBU-Databeskyttelse/promptfooconfig.yaml)
-- Explain each section (prompts, providers, defaultTest, tests, assertionTemplates)
-- The relevant content from EXAMPLES.md needs to go into this file, so EXAMPLES.md can be deleted
-- Run the MBU evaluation
-- Add a simple test case
-- Run again and see results
-- add a note somewhere that a list of "models" available can be seen at https://stgai.itkdev.dk/api/v1/models/list
 
 ### Session 4: BIAS-CHECKER.md (Needs to be created)
 **Goal:** Create tests for Anne Vibekes Bias-checker
@@ -59,12 +49,6 @@
 
 ## Files to Review/Update
 
-### PROMPTFOO-EVALUATIONS.md (Exists - needs review)
-Read and check if it aligns with the new lean approach
-
-### EXAMPLES.md (Exists - should be deleted, when not needed)
-The relevant content from EXAMPLES.md needs to go into PROMPTFOO-EVALUATIONS.md, afterward EXAMPLES.md can be deleted
-
 ### STARTER-TEMPLATE.md (Exists - simplify)
 Can be simplified to more or less just a copy-paste template
 
@@ -79,8 +63,7 @@ Check if too detailed
 
 ## Immediate Actions
 
-1. **Review and complete PROMPTFOO-EVALUATIONS.md** - Ensure it follow the lean approach!
-2. **Create BIAS-CHECKER.md** - Session 4 content
-3. **Simplify remaining docs** - Remove instructor notes, trim excess
-4. **Create OPENCODE-SETUP.md** - Bonus session
+1. **Review and complete BIAS-CHECKER.md** - Ask user for the exact system prompt and formulate trainee exercises to investigate usage patterns and use cases in order for the trainee to create meaningful test cases!
+2. **Simplify remaining docs** - Remove instructor notes, trim excess
+3. **Create OPENCODE-SETUP.md** - Bonus session
 
