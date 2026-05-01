@@ -1,12 +1,12 @@
 ---
 title: "Git Workflow"
 parent: "Phase 3: Collaboration via Git"
-nav_order: 1
+nav_order: 3
 ---
 <!-- OPenCode draft -->
 # Git Workflow Guide
 
-> [!WARN]
+{: .warning }
 > This is an Opencode draft
 
 Simple Git workflow for managing your promptfoo work.
