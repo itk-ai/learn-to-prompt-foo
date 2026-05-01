@@ -28,15 +28,16 @@
 - Practice Git workflow (branch → edit → commit → push → PR)
 - All through VSCode UI
 
-### Session 6: CONTRIBUTE.md (Optional - Needs to be created)
+### Session 6: CONTRIBUTE.md ✅ (Completed)
 **Goal:** Contribute eval configs to prompfoo-docker repo via Git
 
 **Trainee will:**
-- Clone prompfoo-docker repo
-- Create branch
-- Add eval config (e.g., from Session 4 Bias-checker)
-- Commit and push
-- Create Pull Request
+- Request access to prompfoo-docker repo
+- Clone repo and create new eval folder
+- Adapt paths from local to Docker (`/app/` paths)
+- Create README.md following template
+- Commit and push changes
+- Create Pull Request for review
 
 ### Bonus: OPENCODE-SETUP.md (Needs to be created)
 **Goal:** Set up Opencode agent in VSCode
