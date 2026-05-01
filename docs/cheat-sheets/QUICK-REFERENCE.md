@@ -7,7 +7,7 @@ nav_order: 1
 
 # Quick Reference Card
 
-> [!WARN]
+{: .warning }
 > This is an Opencode draft
 
 Print this or keep it open while working!

@@ -7,7 +7,7 @@ nav_order: 2
 
 # YAML Cheat Sheet
 
-> [!WARN]
+{: .warning }
 > This is an Opencode draft
 
 YAML is a simple format for configuration files. It uses indentation instead of brackets.
